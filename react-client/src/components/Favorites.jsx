@@ -4,8 +4,10 @@ import Article from './Article.jsx'
 
 const Favorites = () => (
   <div>
-    <h3> Here are some of your favorite articles</h3>
-    <Article />
+    <a href=""><img src=""></img></a>
+    <a href=""><img src=""></img></a>
+    <a href=""><img src=""></img></a>
+    <a href=""><img src=""></img></a>
   </div>
 );
 
