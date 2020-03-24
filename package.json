@@ -1,5 +1,5 @@
 {
-  "name": "github-fetcher-fullstack-v2",
+  "name": "news.ly",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon server/index.js"
   },
-  "author": "Beth Johnson",
+  "author": "Zach Yusuf",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.23.1",
@@ -25,8 +25,6 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.15.0",
-    "mongoose": "^4.8.6",
-    "mysql": "^2.13.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   }

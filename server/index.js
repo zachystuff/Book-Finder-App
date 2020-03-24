@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const items = require('../database-mysql');
 const request = require('request');
 // var items = require('../database-mongo');
 const cors = require('cors');
@@ -11,25 +10,15 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
-// UNCOMMENT FOR REACT
 app.use(express.static(__dirname + '/../react-client/dist'));
 
-// UNCOMMENT FOR ANGULAR
-// app.use(express.static(__dirname + '/../angular-client'));
-// app.use(express.static(__dirname + '/../node_modules'));
 
-app.get('/items', function (req, res) {
-  items.selectAll(function(err, data) {
-    if(err) {
-      res.sendStatus(500);
-    } else {
-      res.json(data);
-    }
-  });
-});
 
 app.get('/api', (req, res)=> {
-  const { q, country = 'us' } = req.query;
+  const { q, country } = req.query;
+  if(!country) {
+    res.send('err');
+  }
   axios.get('http://newsapi.org/v2/top-headlines', {
       headers: { 'X-Api-Key': process.env.API_KEY },
       params: {

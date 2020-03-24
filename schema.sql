@@ -1,10 +1,10 @@
-DROP DATABASE IF EXISTS test;
+DROP DATABASE IF EXISTS newsly;
 
-CREATE DATABASE test;
+CREATE DATABASE newsly;
 
-USE test;
+USE newsly;
 
-CREATE TABLE items (
+CREATE TABLE articles (
   id int NOT NULL AUTO_INCREMENT,
   quantity integer NOT NULL,
   description varchar(50) NOT NULL,

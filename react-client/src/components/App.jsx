@@ -18,6 +18,18 @@ class App extends Component {
     this.handleChangeSearch = this.handleChangeSearch.bind(this);
     this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
     this.handleChangeCheck = this.handleChangeCheck.bind(this);
+    this.handleClearPage = this.handleClearPage.bind(this);
+  }
+
+  handleClearPage(e) {
+    console.log(e);
+    e.preventDefault();
+    this.setState({
+      search_value: '',
+      checkedItems: new Map(),
+      articles: [],
+      selected: false
+    });
   }
 
   handleChangeCheck(e) {
@@ -45,6 +57,9 @@ class App extends Component {
 
   handleSubmitSearch(e) {
     e.preventDefault();
+    if (this.state.search_value.length === 0) {
+      alert('Ooops...gotta enter a value into the search and select one of the countries')
+    }
     let checkedItemsObj = this.state.checkedItems.entries();
     let country;
     for (let i of checkedItemsObj) {
@@ -64,7 +79,7 @@ class App extends Component {
         this.setState({ articles });
       })
       .catch((err) => {
-        console.log(err);
+        alert('Ooops...gotta enter a value into the search and select one of the countries')
       })
   }
 
@@ -73,11 +88,15 @@ class App extends Component {
     return (
       <div className="main-container">
         <div className="content-container">
-          <h1> News.ly </h1>
+          <div className="header">
+            <img src="https://img.icons8.com/ios/100/000000/dolphin-logo.png" />
+            <h1> News.ly </h1>
+          </div>
           <Search
             handleChangeSearch={this.handleChangeSearch}
             handleSubmitSearch={this.handleSubmitSearch}
             search_value={search_value}
+            handleClearPage={this.handleClearPage}
           />
           <SearchOptions
             checkedItems={checkedItems}

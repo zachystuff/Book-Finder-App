@@ -10,7 +10,6 @@ html {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
   height: 100%;
   width: 100%;
   background-image: linear-gradient(red, yellow);
@@ -26,11 +25,6 @@ body {
                       ". content ."
                       ". . ."
   ;
-  /* position:absolute;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0; */
   overflow: visible;
   z-index:-1;
   height: 95%;
@@ -54,6 +48,13 @@ body {
 .content-container h1 {
   font-family: 'Pacifico',
   cursive;
+}
+
+/* header */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* article container */
@@ -139,20 +140,22 @@ body {
 
 .article-text h6 {
   margin: 0.7em 0 0.3em 0;
-  height: 30%;
-  font-size: 1em;
+  height: 40%;
+  font-size: 1.1em;
   flex-basis: 1 1 0;
   text-rendering: optimizeLegibility;
   word-wrap: normal;
   font-family: 'Open Sans',
   sans-serif;
+  font-weight: 800;
+  overflow-y: hidden;
 }
 
 .article-text p {
   margin: 0.3em 0 0.3em 0;
   font-size: 1em;
   height: 50%;
-  min-height: 2.5em;
+  min-height: 2.0em;
   flex-basis: 0.5 0.5 0;
   text-overflow: ellipsis;
   word-wrap: break-word;
@@ -174,16 +177,21 @@ body {
 }
 
 /* Search bar */
+
 .search-bar {
   width: 100%;
   margin-bottom: 5px;
+  z-index: 1;
 }
 
-.search-bar img {
+.btn-img {
   height: 20px;
   width: 20px;
-  margin-right: -25px;
-  margin-bottom: -4px;
+}
+
+
+.btn-img:hover {
+  border: #ffdb3a 1px solid;
 }
 
 .btn-input {
@@ -191,7 +199,7 @@ body {
   sans-serif;
   background: hsla(0, 0%, 100%, .6);
   border: 1px solid #bdbdbd;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 2px rgba(0, 0, 0, .05);
   width: 45vw;
   height: 40px;
@@ -201,6 +209,10 @@ body {
   opacity: .8;
   -webkit-transition: .5s;
   transition: .5s;
+}
+
+::placeholder {
+  font-family: cursive;
 }
 
 .btn-submit {
@@ -225,4 +237,15 @@ body {
 .checkbox h3 {
   font-family: 'Pacifico',
   cursive;
+}
+/* btn toggle */
+.btn-toggle {
+  font-family: 'Pacifico',
+  cursive;
+}
+
+@media screen and (max-width: 700px) {
+  .article-text h6 {
+    font-size: 20px,
+  }
 }
