@@ -68,7 +68,7 @@ class App extends Component {
       }
     }
 
-    axios.get('http://localhost:3000/api', {
+    axios.get('https://beamrnewsly.herokuapp.com/api', {
       params: {
         q: this.state.search_value,
         country

@@ -19,7 +19,7 @@ app.get('/api', (req, res)=> {
   if(!country) {
     res.send('err');
   }
-  axios.get('http://newsapi.org/v2/top-headlines', {
+  axios.get('https://beamrnewsly.herokuapp.com/http://newsapi.org/v2/top-headlines', {
       headers: { 'X-Api-Key': process.env.API_KEY },
       params: {
         q,
@@ -30,7 +30,7 @@ app.get('/api', (req, res)=> {
   .catch((err) => { throw err;})
 })
 
-app.listen(3000, function() {
+app.listen(process.env.PORT, function() {
   console.log('listening on port 3000!');
 });
 
