@@ -20,7 +20,7 @@
     "webpack": "^2.2.1"
   },
   "dependencies": {
-    "axios": "0.19.2",
+    "axios": "1.6.0",
     "body-parser": "^1.17.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
